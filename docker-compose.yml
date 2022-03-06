@@ -1,0 +1,13 @@
+version: '3'
+services:
+  restreamer:
+    build: .
+    restart: unless-stopped
+    volumes:
+      - .:/app
+    environment:
+      # - LOGLEVEL=debug
+      - PASSPHRASE=${PASSPHRASE}
+      - STREAMKEY=${STREAMKEY}
+    network_mode: host
+
